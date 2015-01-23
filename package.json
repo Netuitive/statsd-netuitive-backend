@@ -1,0 +1,29 @@
+{
+  "name": "statsd-netuitive-backend",
+  "version": "0.1.0",
+  "description": "send data from statsd to Netuitive",
+  "main": "netuitive.js",
+  "repository": {
+    "type": "git",
+    "url":"git://github.com/Netuitive/statsd-netuitive-backend.git"
+  },
+  "keywords": [
+    "netuitive",
+    "statsd"
+  ],
+  "author": "Netuitive",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "",
+  "homepage": "https://www.netuitive.com",
+  "bugs": {
+    "url": "https://github.com/Netuitive/statsd-netuitive-backend/issues",
+    "email": "dev@netuitive.com"
+  },
+  "contributors": [
+    {
+      "name": "Yahong Gu",
+      "email": "yahong.gu@netuitive.com"
+    }
+  ]
+}
