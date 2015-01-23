@@ -1,8 +1,8 @@
 /*jshint node:true, laxcomma:true */
 
-var store = require('./Store')
-var element = require('./Element')
-var resolver = require('./Resolver')
+var store = require('./store');
+var element = require('./element');
+var resolver = require('./resolver');
 
 function Mapper(config) {
 	this.config = config;

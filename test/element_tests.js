@@ -1,4 +1,4 @@
-var element = require('../netuitive/Element')
+var element = require('../netuitive/element');
 
 module.exports = {
 	constructor_sets_element_name_type_id: function(test) {

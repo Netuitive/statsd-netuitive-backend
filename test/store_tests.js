@@ -1,12 +1,12 @@
-var store = require('../netuitive/Store')
-var element = require('../netuitive/Element')
+var store = require('../netuitive/store');
+var element = require('../netuitive/element');
 
 module.exports = {
 	find_returns_expected_values: function(test) {
 		test.expect(1);
 		var s = new store.Store();
 		var e = new element.Element("Server", "foo");
-		s.add(e)
+		s.add(e);
 		var found = s.find("Server!foo");
 		test.equal(e, found);
 		test.done();

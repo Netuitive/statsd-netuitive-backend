@@ -1,5 +1,5 @@
-var mapper = require('../netuitive/Mapper')
-var point = require('../netuitive/Point')
+var mapper = require('../netuitive/mapper');
+var point = require('../netuitive/point');
 
 module.exports = {
 	process_returns_expected_element: function(test) {

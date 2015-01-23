@@ -1,4 +1,4 @@
-var resolver = require('../netuitive/Resolver')
+var resolver = require('../netuitive/resolver');
 
 module.exports = {
 	resolve_literal_returns_expected_value: function(test) {

@@ -4,10 +4,10 @@
 * Flush stats to netuitive (http://www.netuitive.com).
 */
 
-var mapper = require('./netuitive/Mapper')
-var point = require('./netuitive/Point')
-var http = require('http')
-var https = require('https')
+var mapper = require('./netuitive/mapper');
+var point = require('./netuitive/point');
+var http = require('http');
+var https = require('https');
 
 function NetuitiveBackend(startup_time, config, events, logger) {
 	this.config = config.netuitive;
