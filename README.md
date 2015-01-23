@@ -60,5 +60,6 @@ Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) t
 		}
 		```
 		**Note:** Each element requires a type, which is written as a string literal. In the example above, the element type is "ANA Server."
+		**Note:** Each metric name has its metric type appended before matching against pattern, i.e. ".counter", ".gauge", ".timer.<timer-key>".
 		4. We recommend setting the flush interval to 60000 milliseconds. This will ensure that your StatsD data is collected by Netuitive every 1 minute.
 		5. After saving the configuration file, restart StatsD to begin monitoring your data with Netuitive Cloud.
