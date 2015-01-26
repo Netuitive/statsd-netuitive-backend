@@ -65,26 +65,26 @@ Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) t
         }
       }
     },
-            {
-              pattern: "\^(statsd\\..*)",
-              element: {
-                type: "StatsD",
-                name: "StatsD",
-                metric: {
-                  name: "$1"
-                }
-              }
-            },
-            {
-              pattern: "\^(timestamp_lag.*)",
-              element: {
-                type: "StatsD",
-                name: "StatsD",
-                metric: {
-                  name: "statsd.$1"
-                }
-              }
-            }
+    {
+      pattern: "\^(statsd\\..*)",
+      element: {
+        type: "StatsD",
+        name: "StatsD",
+        metric: {
+          name: "$1"
+        }
+      }
+    },
+    {
+      pattern: "\^(timestamp_lag.*)",
+      element: {
+        type: "StatsD",
+        name: "StatsD",
+        metric: {
+          name: "statsd.$1"
+        }
+      }
+    }
         ]
     }
 }
