@@ -37,7 +37,7 @@ Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) t
 	],
 	netuitive: {
 		apiKey: "YOUR_API_KEY",
-		apiHost: "api.app.netuitive.com",
+		apiHost: "YOUR_NETUITIVE_API_HOST",
 		apiPort: 443,
 	}
 }
@@ -52,20 +52,39 @@ Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) t
 	backends:["./backends/netuitive"],
 	netuitive: {
 		apiKey: "YOUR_API_KEY",
-		apiHost: "api.app.netuitive.com",
+		apiHost: "YOUR_NETUITIVE_API_HOST",
 		apiPort: 443,
 		mappings: [
 			{
-				pattern: "(.*?ana.*?)\\.(.*?\\.mean)\\.gauge",
-				element: {
-					type: "ANA Server",
-					name: "$1",
-					metric: {
-						name: "$2"
-					}
-				}
-			},
-			 ...more mappings
+      pattern: "(.*?app.*?)\\.(.*?\\.mean)\\.gauge",
+      element: {
+        type: "APP Server",
+        name: "$1",
+        metric: {
+          name: "$2"
+        }
+      }
+    },
+		    {
+		      pattern: "\^(statsd\\..*)",
+		      element: {
+		        type: "StatsD",
+		        name: "StatsD",
+		        metric: {
+		          name: "$1"
+		        }
+		      }
+		    },
+		    {
+		      pattern: "\^(timestamp_lag.*)",
+		      element: {
+		        type: "StatsD",
+		        name: "StatsD",
+		        metric: {
+		          name: "statsd.$1"
+		        }
+		      }
+		    }
 		]
 	}
 }
