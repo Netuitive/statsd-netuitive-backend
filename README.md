@@ -32,14 +32,14 @@ Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) t
 
 ```js
 {
-	backends:[
-		"./backends/netuitive"
-	],
-	netuitive: {
-		apiKey: "YOUR_API_KEY",
-		apiHost: "YOUR_NETUITIVE_API_HOST",
-		apiPort: 443,
-	}
+    backends:[
+        "./backends/netuitive"
+    ],
+    netuitive: {
+        apiKey: "YOUR_API_KEY",
+        apiHost: "YOUR_NETUITIVE_API_HOST",
+        apiPort: 443,
+    }
 }
 ```
 
@@ -49,13 +49,13 @@ Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) t
 
 ```js
 {
-	backends:["./backends/netuitive"],
-	netuitive: {
-		apiKey: "YOUR_API_KEY",
-		apiHost: "YOUR_NETUITIVE_API_HOST",
-		apiPort: 443,
-		mappings: [
-			{
+    backends:["./backends/netuitive"],
+    netuitive: {
+        apiKey: "YOUR_API_KEY",
+        apiHost: "YOUR_NETUITIVE_API_HOST",
+        apiPort: 443,
+        mappings: [
+            {
       pattern: "(.*?app.*?)\\.(.*?\\.mean)\\.gauge",
       element: {
         type: "APP Server",
@@ -65,28 +65,28 @@ Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) t
         }
       }
     },
-		    {
-		      pattern: "\^(statsd\\..*)",
-		      element: {
-		        type: "StatsD",
-		        name: "StatsD",
-		        metric: {
-		          name: "$1"
-		        }
-		      }
-		    },
-		    {
-		      pattern: "\^(timestamp_lag.*)",
-		      element: {
-		        type: "StatsD",
-		        name: "StatsD",
-		        metric: {
-		          name: "statsd.$1"
-		        }
-		      }
-		    }
-		]
-	}
+            {
+              pattern: "\^(statsd\\..*)",
+              element: {
+                type: "StatsD",
+                name: "StatsD",
+                metric: {
+                  name: "$1"
+                }
+              }
+            },
+            {
+              pattern: "\^(timestamp_lag.*)",
+              element: {
+                type: "StatsD",
+                name: "StatsD",
+                metric: {
+                  name: "statsd.$1"
+                }
+              }
+            }
+        ]
+    }
 }
 ```
 
