@@ -3,7 +3,7 @@
 function Element(type, name) {
 	this.type = type;
 	this.name = name;
-	this.id = type + "!" + name;
+	this.id = name;
 	this.metrics = [];
 	this.samples = [];
 	this.attributes = [];
