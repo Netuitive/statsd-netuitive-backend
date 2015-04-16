@@ -27,7 +27,7 @@ module.exports = {
 		var e = elements[0];
 		test.equal("foo", e.name);
 		test.equal("Server", e.type);
-		test.equal("Server!foo", e.id);
+		test.equal("foo", e.id);
 		
 		test.equal(1, e.metrics.length);
 		var metric = e.metrics[0];
