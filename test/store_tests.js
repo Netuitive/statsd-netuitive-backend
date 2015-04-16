@@ -7,7 +7,7 @@ module.exports = {
 		var s = new store.Store();
 		var e = new element.Element("Server", "foo");
 		s.add(e);
-		var found = s.find("Server!foo");
+		var found = s.find("foo");
 		test.equal(e, found);
 		test.done();
 	},
@@ -38,7 +38,7 @@ module.exports = {
 		var e2 = new element.Element("Server", "foo");
 		test.ok(s.add(e1));
 		test.ok(!s.add(e2));
-		test.equal(e1, s.find("Server!foo"));
+		test.equal(e1, s.find("foo"));
 		test.done();
 	}
 }

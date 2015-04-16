@@ -6,7 +6,7 @@ module.exports = {
 		var e = new element.Element("Server", "foo");
 		test.equal("Server", e.type);
 		test.equal("foo", e.name);
-		test.equal("Server!foo", e.id);
+		test.equal("foo", e.id);
 		test.done();
 	},
 	add_metric_append_metric_sample: function(test) {
