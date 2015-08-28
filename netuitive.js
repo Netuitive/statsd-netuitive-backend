@@ -18,6 +18,7 @@ function NetuitiveBackend(startup_time, config, events, logger) {
 	this.apiPort = this.config.apiPort ? this.config.apiPort : 443;
 	this.protocol = this.config.http ? http : https; 
 	this.status = {};
+	this.useCountersPerSecond = this.config.useCountersPerSecond ? this.config.useCountersPerSecond : false;
 
 	var self = this;
 	events.on('flush', function(time_stamp, metrics) {
@@ -107,7 +108,7 @@ NetuitiveBackend.prototype.flush = function(timestamp, metrics) {
 	var m = new mapper.Mapper(this.config);
 	var key,val,p;
 	for (key in metrics.counters) {
-		 val = metrics.counters[key];
+		 val = this.useCountersPerSecond ? metrics.counter_rates[key] : metrics.counters[key];
 		 p = new point.Point(key + '.counter', val, timestamp);
 		 m.process(p);
 	}
