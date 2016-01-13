@@ -2,6 +2,7 @@
 
 var store = require('./store');
 var element = require('./element');
+var metric = require('./metric');
 var resolver = require('./resolver');
 
 function Mapper(config) {
@@ -22,7 +23,14 @@ Mapper.prototype.process = function(point) {
 		var e = new element.Element(mapping.element.type, r.resolve(key, mapping.element.name));
 		this.store.add(e);
 		e = this.store.find(e.id);
-		e.addMetric(point.timestamp, r.resolve(key, mapping.element.metric.name), point.val);
+		var m = e.findOrCreateMetric(new metric.Metric(r.resolve(key, mapping.element.metric.name)));
+        if (mapping.element.metric.tags) {
+            for (var idx = 0; idx < mapping.element.metric.tags.length; idx++) {
+                var tag = mapping.element.metric.tags[idx];
+                m.addTag(r.resolve(key, tag.name), r.resolve(key, tag.value));
+            }
+        }
+		e.addSample(point.timestamp, m.id, point.val);
 	}
 }
 

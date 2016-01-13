@@ -46,6 +46,7 @@ Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) t
 **3.3** In order to associate StatsD metrics with an element in Netuitive, add at least one mapping for Netuitive in the mappings section of your configuration file. Each mapping uses a regular expression (regex) that corresponds to a set of keys in StatsD. If the element or metric name is in the StatsD key, it can be represented by $(regex-captured-group-number), demonstrated in the code below. Element and metric names can also be written as string literals.
 
 **Note:** You can define more than one mapping to capture multiple metrics that belong to the same element, or to capture different elements. There are many online regex tools available that can help you with this mapping process, e.g. [regex101](https://www.regex101.com).
+**Note:** You can add tags to metric, for each tag block, name is required; both name and value can use either $(regex-captured-group-number) or string literal
 
 ```js
 {
@@ -61,7 +62,10 @@ Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) t
         type: "APP Server",
         name: "$1",
         metric: {
-          name: "$2"
+          name: "$2",
+          tags: [
+            {name: "$3", value: "tagValue"}
+          ]
         }
       }
     },

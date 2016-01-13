@@ -9,12 +9,18 @@ function Element(type, name) {
 	this.attributes = [];
 }
 
+Element.prototype.addSample = function(timestamp, metricId, value) {
+	this.samples.push({"metricId": metricId, "timestamp": timestamp * 1000, "val": value});
+}
 
-Element.prototype.addMetric = function(timestamp, metric, value) {
-	if (this.metrics.filter(function(m){return m.id == metric}).length == 0) {
-		this.metrics.push({"id": metric, "name": metric});
+Element.prototype.findOrCreateMetric = function(metric) {
+	for(var idx = 0; idx < this.metrics.length; idx++) {
+		if (this.metrics[idx].id = metric.id) {
+			return this.metrics[idx];
+		}
 	}
-	this.samples.push({"metricId": metric, "timestamp": timestamp * 1000, "val": value});
+	this.metrics.push(metric);
+	return metric;
 }
 
 exports.Element = Element;

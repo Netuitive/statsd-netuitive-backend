@@ -1,6 +1,13 @@
 var resolver = require('../netuitive/resolver');
 
 module.exports = {
+	resolve_null_returns_empty_string: function(test) {
+		test.expect(1);
+		var r = new resolver.Resolver("Server!(.*)");
+		var resolved = r.resolve("Server!foo", null);
+		test.equal("", resolved);
+		test.done();
+	},
 	resolve_literal_returns_expected_value: function(test) {
 		test.expect(1);
 		var r = new resolver.Resolver("Server!(.*)");

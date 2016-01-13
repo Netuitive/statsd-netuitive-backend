@@ -5,6 +5,7 @@ function Resolver(regex) {
 }
 
 Resolver.prototype.resolve = function(key, expression) {
+	if (!expression) return "";
 	var groups = key.match(this.regex);
 	var literals = expression.split(/\$\d+/);
 	var indices = [];
