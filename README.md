@@ -62,13 +62,23 @@ Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) t
         type: "APP Server",
         name: "$1",
         metric: {
-          name: "$2",
-          tags: [
-            {name: "$3", value: "tagValue"}
-          ]
+          name: "$2"
         }
       }
     },
+    {
+      pattern: "(.*?app.*?)\\.(service.utilization)\\.gauge",
+        element: {
+          type: "APP Server",
+          name: "$1",
+          metric: {
+            name: "$2",
+            tags: [
+                {"name": "utilization", "value":"true"}
+            ]
+          }
+        }
+     },
     {
       pattern: "\^(statsd\\..*)",
       element: {
