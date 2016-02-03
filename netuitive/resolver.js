@@ -29,6 +29,7 @@ Resolver.prototype.resolve = function(key, expression) {
 		for (var idx = 0; idx < indices.length; idx++) {
 			resolved += literals[idx] + groups[indices[idx]];
 		}
+		resolved += literals[indices.length];
 	}
 	return resolved;
 }
