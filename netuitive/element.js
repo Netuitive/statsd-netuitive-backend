@@ -15,7 +15,7 @@ Element.prototype.addSample = function(timestamp, metricId, value) {
 
 Element.prototype.findOrCreateMetric = function(metric) {
 	for(var idx = 0; idx < this.metrics.length; idx++) {
-		if (this.metrics[idx].id = metric.id) {
+		if (this.metrics[idx].id == metric.id) {
 			return this.metrics[idx];
 		}
 	}
