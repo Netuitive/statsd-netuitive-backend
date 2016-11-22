@@ -82,7 +82,7 @@ NetuitiveBackend.prototype.post = function(message) {
 			self.log("headers: " + JSON.stringify(res.headers), "DEBUG");
 		}
 
-		if (res.statusCode !== 200) {
+		if (res.statusCode < 200 || res.statusCode > 299) {
 			self.log("error occurred during post, statusCode:" + res.statusCode, "WARN");
 		}
 	});
