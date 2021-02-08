@@ -3,7 +3,7 @@ Netuitive StatsD Backend Plugin
 
 Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) that allows you to monitor your StatsD metric data with [Netuitive](https://www.netuitive.com). 
 
-For more information on the StatsD integration with Netuitive, see our [help docs](https://help.netuitive.com/Content/Misc/Datasources/new_statsd_datasource.htm), or contact Netuitive support at [support@netuitive.com](mailto:support@netuitive.com).
+For more information on the StatsD integration with Netuitive, see our [help docs](https://docs.metricly.com/integrations/etsy-statsd/), or contact Netuitive support at [support@netuitive.com](mailto:support@netuitive.com).
 
 Installing the Plugin
 ----------------------
