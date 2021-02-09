@@ -1,9 +1,9 @@
 Netuitive StatsD Backend Plugin
 ==========================
 
-Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) that allows you to monitor your StatsD metric data with [Netuitive](https://www.netuitive.com). 
+Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) that allows you to monitor your StatsD metric data with [Virtana](https://www.virtana.com/products/cloudwisdom/). 
 
-For more information on the StatsD integration with Netuitive, see our [help docs](https://help.netuitive.com/Content/Misc/Datasources/new_statsd_datasource.htm), or contact Netuitive support at [support@netuitive.com](mailto:support@netuitive.com).
+For more information on the StatsD integration with Netuitive, see our [help docs](https://docs.virtana.com/en/netuitive-statsd.html), or contact Netuitive support at [cloudwisdom.support@virtana.com](mailto:cloudwisdom.support@virtana.com).
 
 Installing the Plugin
 ----------------------
