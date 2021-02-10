@@ -1,14 +1,14 @@
-Netuitive StatsD Backend Plugin
+CloudWisdom StatsD Backend Plugin
 ==========================
 
-Netuitive offers a backend plugin for [StatsD](https://github.com/etsy/statsd) that allows you to monitor your StatsD metric data with [Netuitive](https://www.netuitive.com). 
+CloudWisdom offers a backend plugin for [StatsD](https://github.com/etsy/statsd) that allows you to monitor your StatsD metric data with [CloudWisdom](https://www.virtana.com/products/cloudwisdom/). 
 
-For more information on the StatsD integration with Netuitive, see our [help docs](https://help.netuitive.com/Content/Misc/Datasources/new_statsd_datasource.htm), or contact Netuitive support at [support@netuitive.com](mailto:support@netuitive.com).
+For more information on the StatsD integration with CloudWisdom, see our [help docs](https://docs.virtana.com/en/netuitive-statsd.html), or contact CloudWisdom support at [cloudwisdom.support@virtana.com](mailto:cloudwisdom.support@virtana.com).
 
 Installing the Plugin
 ----------------------
 
-1. Create a StatsD datasource in Netuitive (you'll need a Netuitive account).
+1. Create a StatsD datasource in CloudWisdom (you'll need a CloudWisdom account).
 
 1. Clone netuitive.js and the netuitive directory from this project.
 
@@ -22,7 +22,7 @@ Installing the Plugin
                 ]
             }
 
-1. Add the API key generated from creating a StatsD datasource in Netuitive as well as the API Host and API port shown in the code below to your configuration file.
+1. Add the API key generated from creating a StatsD datasource in CloudWisdom as well as the API Host and API port shown in the code below to your configuration file.
 
         {
             backends:[
